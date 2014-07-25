@@ -1,0 +1,9 @@
+The Result tidydataset has included the following columns:
+
+1. row number (1:180 not including the header row)
+
+2. activity_label which is the descriptive name of the activity
+
+3. subject  which indicates the experiment subject (both the train and test groups are included)
+
+4-180. average value of all the mean/std measurements for each activity and each subject. And the column names are selfdescriptive labels.
