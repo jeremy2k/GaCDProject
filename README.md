@@ -26,8 +26,6 @@ GaCDProject
 
 #6 extract only mean and std for measurements and make descriptive variable names
 
-#7 initialize the first 3 columns of the tidydataset and make descriptive variable names
+#7 remove test/train group labels and then calculate the average of each variable for each activity and subject
 
-#8 use for loop to calculate the average of each variable for each activity and subject and make descriptive variable names
-
-#9 save the result tidy data set in the file "tidydataset.txt"
+#8 save the required tidy data set to the data file

@@ -53,19 +53,18 @@ tidydataset1<-cbind(fullds3[,1:3],tidydataset)
 tidydataset2<-merge(activity,tidydataset1,by.x="activity_id",by.y="activity_id",all=FALSE)
 
 
-#initialize the first 3 columns of the tidydataset
 
-tidydata3<-data.frame()
-tidydata3<-ddply(tidydataset2,.(activity_label,subject),summarize,mean=mean(tidydataset2[,5]))
+#remove test/train group labels and then calculate the average of each variable for each activity and subject
 
-colnames(tidydata3)[3]<-paste("average of",colnames(tidydataset2)[5])
+tidydataset3<-tidydataset2[,c(1:3,5:83)]
 
-#use for loop to calculate the average of each variable for each activity and subject
+tidydataset4<-aggregate(tidydataset3,list(tidydataset3$activity_id, tidydataset3$activity_label,tidydataset3$subject),mean)
 
-for (i in 4:81){
-j<-i+2
-tidydata3[,i]<-ddply(tidydataset2,.(activity_label,subject),summarize,mean=mean(tidydataset2[,j]))[,3]
-colnames(tidydata3)[i]<-paste("average of",colnames(tidydataset2)[j])
-}
 
-write.table(tidydata3,"./data/tidydataset.txt")
+# save the required tidy data set to the data file
+
+tidydata<-tidydataset4[,c(2,4,6:85)]
+
+names(tidydata)[1]<-c("activity_label")
+
+write.table(tidydata,"./data/tidydataset.txt")

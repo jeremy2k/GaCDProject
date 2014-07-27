@@ -4,6 +4,8 @@ The Result tidydataset has included the following columns:
 
 2. activity_label which is the descriptive name of the activity
 
-3. subject  which indicates the experiment subject (both the train and test groups are included)
+3. activity_id which is the id of the activity
 
-4-180. average value of all the mean/std measurements for each activity and each subject. And the column names are selfdescriptive labels.
+4. subject  which indicates the experiment subject (both the train and test groups are included)
+
+5. 5-83 average value of all the mean/std measurements for each activity and each subject. And the column names are selfdescriptive labels.
